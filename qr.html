@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>שלט QR | אבי × קוקו</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Arial,sans-serif;color:#18202b;background:#ece8e1}.wrap{max-width:520px;margin:auto;padding:18px}.poster{background:#fffdf7;border:10px solid #1d2839;padding:24px 14px 28px;text-align:center;border-radius:19px;box-shadow:0 14px 35px #0002}.stripe{height:8px;border-radius:12px;background:repeating-linear-gradient(115deg,#b52e3c 0 15px,#fff 15px 30px,#21558c 30px 45px,#fff 45px 60px)}h1{font-size:clamp(40px,11vw,60px);line-height:1.04;margin:27px 0 10px}h2{font-size:27px;margin:8px 0 16px}.red{color:#b52e3c}.hint{font-size:18px}.qr{width:min(68vw,275px);height:min(68vw,275px);margin:18px auto;background:white;padding:9px;border:5px solid #192a3f;border-radius:12px;display:grid;place-items:center}.qr img{width:100%;height:100%}.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}.badges span{border-radius:30px;background:#1d2839;color:white;padding:7px 10px;font-weight:750;font-size:13px}.small{font-size:12px;color:#686365;overflow-wrap:anywhere}.actions{text-align:center;padding:20px 4px}.actions input{width:100%;font:inherit;padding:12px;text-align:left;direction:ltr;border:1px solid #999;border-radius:10px;margin-bottom:12px}.actions button{font:inherit;font-weight:800;background:#b72e3b;color:white;border:0;border-radius:10px;padding:13px 15px;margin:2px}.actions p{font-size:12px;color:#555}@media print{body{background:white}.wrap{max-width:none}.poster{max-width:480px;margin:auto;box-shadow:none}.actions{display:none}@page{size:A4 portrait;margin:12mm}}
+</style>
+</head>
+<body>
+<main class="wrap"><div class="poster"><div class="stripe"></div><h1>משעמם בהמתנה?</h1><h2>בואו ל<span class="red">קרב המספריים!</span></h2><p class="hint">אבן ✊ נייר ✋ מספריים ✌️<br><b>מול אבי או קוקו!</b></p><div id="qr" class="qr"><span>טוען קוד QR…</span></div><div class="badges"><span>🎮 בלי הורדה</span><span>⚡ משחק בחינם</span><span>🏆 מי ינצח?</span></div><h2>סרקו והתחילו לשחק 📱</h2><p class="small" id="printedUrl"></p><div class="stripe"></div></div><section class="actions"><h3>יצירת שלט למספרה</h3><p>הכתובת מתעדכנת אוטומטית לפי מיקום המשחק. אפשר לשנות אותה ידנית.</p><input id="target" type="url" aria-label="כתובת המשחק"><button id="generate">יצירת קוד QR</button><button id="print">🖨️ הדפסת שלט</button><p id="msg"></p></section></main>
+<script>
+const target=document.getElementById('target'),qr=document.getElementById('qr'),printed=document.getElementById('printedUrl'),msg=document.getElementById('msg');
+target.value=new URL('./',location.href).href;
+function make(){try{const u=new URL(target.value.trim());if(u.protocol!=='https:'&&u.protocol!=='http:')throw Error('כתובת לא תקינה');qr.replaceChildren();const img=new Image();img.alt='סרקו כדי לשחק מול אבי וקוקו';img.src='https://api.qrserver.com/v1/create-qr-code/?size=500x500&margin=12&data='+encodeURIComponent(u.href);img.onerror=()=>msg.textContent='שגיאה בטעינת ה-QR, בדקו את החיבור לאינטרנט';qr.append(img);printed.textContent=u.href;msg.textContent='השלט מוכן להדפסה';}catch(e){msg.textContent='הכניסו כתובת אתר מלאה ותקינה';}}
+document.getElementById('generate').addEventListener('click',make);document.getElementById('print').addEventListener('click',()=>window.print());make();
+</script>
+</body></html>
