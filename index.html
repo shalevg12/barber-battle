@@ -16,8 +16,9 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   
 /* Mobile battle stage and controls */
-body.game-mode .shell{padding-bottom:calc(152px + env(safe-area-inset-bottom))}
+body.game-mode .shell{padding-bottom:calc(150px + env(safe-area-inset-bottom))}
 body.game-mode .topbar{height:57px}
+.home-hero{padding:8px 0 10px}.home-hero h1{font-size:clamp(26px,8vw,40px);margin:6px 0 4px}.home-hero .sub{max-width:330px}.hero-cta{margin:12px 0 6px}.fullscreen-duo{gap:0;margin-inline:-16px}.fullscreen-duo .fighter-card{border-radius:0;min-height:60dvh;aspect-ratio:auto;border-left-width:1px;border-right-width:1px}.fullscreen-duo .fighter-card:first-child{border-top-right-radius:24px;border-bottom-right-radius:24px}.fullscreen-duo .fighter-card:last-child{border-top-left-radius:24px;border-bottom-left-radius:24px}.fullscreen-duo .fighter-card img{object-position:center top}.fullscreen-duo .fighter-card .card-body{bottom:18px}.fullscreen-duo .fighter-card .card-body h3{font-size:42px}.fullscreen-duo .fighter-card .card-body p{font-size:15px}.barber-rule,.section-label{display:none}
 body.game-mode .tiny-footer{display:none}
 body.game-mode .back{margin-top:3px;padding:4px 0;font-size:12px}
 body.game-mode .match-heading .eyebrow{display:none}
@@ -29,18 +30,18 @@ body.game-mode .score{font-size:35px}
 body.game-mode .round-dots{gap:7px;margin-bottom:8px}
 body.game-mode .arena.fight-arena{margin-top:6px!important;padding:10px 10px 12px;border-radius:22px;overflow:hidden}
 .fight-arena .fight-caption{font-size:11px;font-weight:900;color:var(--gold);letter-spacing:.4px;margin-bottom:6px}
-.fight-arena .stage-versus{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr);align-items:start;gap:6px;direction:ltr}
+.fight-arena .stage-versus{display:grid;grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr);align-items:stretch;gap:0;direction:ltr;margin-inline:-10px}
 .fight-arena .actor{min-width:0;display:flex;flex-direction:column;align-items:center;gap:7px}
-.fight-arena .actor-photo{height:min(47dvh,360px);width:100%;max-width:none;aspect-ratio:.72;position:relative;border-radius:22px;border:2px solid #ffffff2d;background:linear-gradient(160deg,#353d53,#131825);box-shadow:0 7px 22px #0007;isolation:isolate}
+.fight-arena .actor-photo{height:min(58dvh,520px);width:100%;max-width:none;aspect-ratio:auto;position:relative;border-radius:0;border:2px solid #ffffff2d;background:linear-gradient(160deg,#353d53,#131825);box-shadow:0 7px 22px #0007;isolation:isolate}
 .fight-arena .actor.player .actor-photo{border-color:#83bcff88;background:radial-gradient(circle at center 38%,#426b93,#172337 72%)}
-.fight-arena .actor.barber .actor-photo{border-color:#ff988388;background:#25171c}
-.fight-arena .actor-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:20px;pointer-events:none}
-.fight-arena .actor-photo .player-head{font-size:clamp(74px,19vw,112px);position:absolute;top:12%;inset-inline:0;text-align:center;filter:drop-shadow(0 9px 5px #0005)}
+.fight-arena .actor.barber .actor-photo{border-color:#ff988388;background:#25171c}.fight-arena .actor.player .actor-photo{border-top-right-radius:24px;border-bottom-right-radius:24px}.fight-arena .actor.barber .actor-photo{border-top-left-radius:24px;border-bottom-left-radius:24px}
+.fight-arena .actor-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;pointer-events:none}
+.fight-arena .actor-photo .player-head{font-size:clamp(98px,24vw,150px);position:absolute;top:13%;inset-inline:0;text-align:center;filter:drop-shadow(0 9px 5px #0005)}
 .fight-arena .actor-photo:after{content:'';position:absolute;inset:58% 0 0;border-radius:0 0 20px 20px;background:linear-gradient(transparent,#080d1b79);pointer-events:none;z-index:1}
 .fight-arena .actor-name{font-size:16px;font-weight:900}
 .fight-arena .actor-name small{display:block;font-size:11px;font-weight:500;color:#b4b4c0}
-.fight-arena .stage-flash{font-size:18px;font-weight:1000;color:var(--gold);padding-top:44%;filter:drop-shadow(0 0 12px #eec77e50)}
-.fight-arena .punch-arm{position:absolute;z-index:5;right:1%;bottom:-2%;width:88px;height:126px;transform-origin:60% 100%;transform:rotate(-11deg);filter:drop-shadow(2px 6px 4px #0007);pointer-events:none}
+.fight-arena .stage-flash{font-size:14px;font-weight:1000;color:var(--gold);padding-top:50%;filter:drop-shadow(0 0 12px #eec77e50)}
+.fight-arena .punch-arm{position:absolute;z-index:5;right:2%;bottom:0;width:104px;height:150px;transform-origin:60% 100%;transform:rotate(-11deg);filter:drop-shadow(2px 6px 4px #0007);pointer-events:none}
 .fight-arena .punch-arm::before{content:'';position:absolute;bottom:0;right:24px;width:31px;height:82px;border-radius:20px 20px 7px 7px;background:linear-gradient(90deg,#a76a4e,#e7a17e 40%,#b87856);border:1px solid #f3bb9955;transform:rotate(-12deg)}
 .fight-arena .actor.player .punch-arm::before{background:linear-gradient(90deg,#294f83,#5389bc 50%,#233e69);border-color:#7aaff33d}
 .fight-arena .punch-arm .punch-hand{position:absolute;right:0;top:2px;font-size:78px;line-height:1;display:block;transform:rotate(-10deg);filter:drop-shadow(0 3px 2px #0006)}
@@ -65,8 +66,8 @@ body.game-mode .tip{display:none}
 @keyframes barberReveal{0%{transform:rotate(-10deg) scale(.55);opacity:.55}65%{transform:rotate(5deg) scale(1.2)}100%{transform:rotate(-10deg) scale(1);opacity:1}}
 @keyframes barberBounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-6px)}}
 @keyframes barberVictory{0%{transform:scale(.95)}70%{transform:scale(1.04)}100%{transform:scale(1)}}
-@media(max-height:740px){.fight-arena .actor-photo{height:min(39dvh,300px)}body.game-mode .match-heading h2{font-size:18px}body.game-mode .arena.fight-arena{padding:8px 9px 10px}.fight-arena .stage-msg{min-height:35px;margin-top:8px}}
-@media(max-height:620px){.fight-arena .actor-photo{height:min(32dvh,225px)}.fight-arena .punch-arm{transform:scale(.82) rotate(-11deg);transform-origin:bottom right}.move-dock .move-btn{min-height:61px}.move-dock .move-btn .emoji{font-size:27px}}
+@media(max-height:740px){.fight-arena .actor-photo{height:min(50dvh,430px)}body.game-mode .match-heading h2{font-size:18px}body.game-mode .arena.fight-arena{padding:8px 9px 10px}.fight-arena .stage-msg{min-height:35px;margin-top:8px}}
+@media(max-height:620px){.fight-arena .actor-photo{height:min(43dvh,330px)}.fight-arena .punch-arm{transform:scale(.82) rotate(-11deg);transform-origin:bottom right}.move-dock .move-btn{min-height:61px}.move-dock .move-btn .emoji{font-size:27px}}
 @media(prefers-reduced-motion:reduce){.fight-arena .punch-arm,.fight-arena .punch-hand,.fight-arena .actor-photo img{animation:none!important}}
 
 </style>
@@ -99,13 +100,10 @@ function toast(msg){const root=$('toastRoot');root.innerHTML='<div class="toast"
 function updateBar(){const user=me();$('profileBtn').textContent=user?'👤 '+user.name:'👤 אורח / התחברות';}
 function view(name){page=name;document.body.classList.toggle('game-mode',name==='game');updateBar();const app=$('app');if(name==='home')app.innerHTML=homeHtml();if(name==='game'){app.innerHTML=gameHtml();enhanceGame();}if(name==='end')app.innerHTML=endHtml();if(name==='leaders')app.innerHTML=leadersHtml();wire();window.scrollTo({top:0,behavior:'instant'});}
 function homeHtml(){const user=me();return `
-  <section class="intro"><div class="eyebrow"><span class="logo-scissor">✂</span> משחק ההמתנה של המספרה <span class="logo-scissor">✂</span></div><h1>בחרו עכשיו: <span>אבי או קוקו</span></h1><p class="sub">קודם בוחרים את הספר שלכם — ואז מתחילים בקרב אבן־נייר־ומספריים.</p></section>
-  <div class="barber-rule"></div>
-  <div class="section-label"><span>🎮 במי בוחרים עכשיו?</span><span class="tiny">לחצו על אבי או על קוקו כדי להתחיל</span></div>
-  <div class="duo" role="group" aria-label="בחירת יריב">
+  <section class="intro home-hero"><div class="eyebrow"><span class="logo-scissor">✂</span> משחק ההמתנה של המספרה <span class="logo-scissor">✂</span></div><h1>בחרו: <span>אבי או קוקו</span></h1><p class="sub">קודם בוחרים את הספר שלכם — ואז מתחילים באבן־נייר־ומספריים.</p><button class="cta hero-cta" id="startBtn"><span class="arrow">⚡</span> יאללה למשחק <span class="arrow">❯</span></button></section>
+  <div class="duo fullscreen-duo" role="group" aria-label="בחירת יריב">
     ${Object.entries(PEOPLE).map(([id,v])=>`<button type="button" class="fighter-card ${selected===id?'selected':''}" data-who="${id}" data-select="${id}" aria-pressed="${selected===id}"><img src="${v.image}" alt="דמות המשחק של ${v.name}" loading="eager"><span class="tick" aria-hidden="true">✓</span><span class="card-body"><span class="role">${v.role}</span><h3>${v.name}</h3><p>${v.flavor}</p></span></button>`).join('')}
   </div>
-  <div style="height:18px"></div><button class="cta" id="startBtn"><span class="arrow">⚡</span> יאללה, מתחילים! <span class="arrow">❯</span></button>
   <p class="undercta">${user?'משחקים בתור '+safe(user.name)+' · הניצחונות שלך נשמרים':'לא צריך להירשם · אפשר להתחיל כאורח מיד'}</p>
   <div class="features"><div class="feature"><div class="icon">✊</div><b>אבן־נייר־ומספריים</b><span>החוקים של פעם</span></div><div class="feature"><div class="icon">🔥</div><b>הראשון ל־3</b><span>לוקח את הקרב</span></div><div class="feature"><div class="icon">🏆</div><b>ניקוד וזכיות</b><span>לשחקני המכשיר</span></div></div>
   <div class="secondary-row"><button class="secondary" id="leaderHome">🏆 טבלת מובילים</button><button class="secondary" id="authHome">${user?'👤 החשבון שלי':'👤 הרשמה מהירה'}</button></div>`;}
